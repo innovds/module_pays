@@ -1,0 +1,29 @@
+logging:
+  level:
+    org.innovds: trace
+
+#TODO: should be removed in production
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+
+server:
+  error:
+    include-stacktrace: on-trace-param
+  port: 8081
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+mail:
+  smtp:
+    debug: true
