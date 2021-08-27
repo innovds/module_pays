@@ -19,6 +19,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "Countries")
 public class Country extends AbstractPersistable<Long> {
 
     @NotBlank

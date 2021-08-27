@@ -15,7 +15,7 @@ import javax.validation.constraints.NotBlank;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"name", "state_id"})})
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"name", "state_id"})}, name="Cities")
 public class City extends AbstractPersistable<Long> {
 
     @NotBlank
