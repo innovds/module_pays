@@ -1,8 +1,13 @@
-package org.innovds.contact.web;
+package org.innovds.pays.web;
 
-import org.innovds.contact.domain.City;
+import org.innovds.pays.Repositories.*;
+import org.innovds.pays.domain.*;
 import org.innovds.data.web.AbstractReadController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -13,7 +18,7 @@ public class CityController  extends AbstractReadController<City, Long> {
     private CityRepository cityRepository;
        
     public String listAll(Model model) {
-        List<City> listCities = CityRepository.findAll();
+        List<City> listCities = cityRepository.findAll();
         model.addAttribute("listCities", listCities);
            
         return "Cities";
@@ -22,7 +27,7 @@ public class CityController  extends AbstractReadController<City, Long> {
 
     @GetMapping("/state/{id}")
     public State get(@PathVariable int id) {
-        return StateRepository.findByState_id(id).get();
+        return null;
         
     }
 }

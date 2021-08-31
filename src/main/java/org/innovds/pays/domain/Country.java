@@ -1,6 +1,5 @@
-package org.innovds.contact.domain;
+package org.innovds.pays.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,9 +7,10 @@ import lombok.Setter;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -19,7 +19,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "Countries")
+@Table(name = "countries")
 public class Country extends AbstractPersistable<Long> {
 
     @NotBlank
@@ -41,14 +41,14 @@ public class Country extends AbstractPersistable<Long> {
     private Long longitude;
     private String emoji;
     private String emojiU;
-    private DateTime created_at;
-    private DateTime updated_at;
+    private Date created_at;
+    private Date updated_at;
     private Short flag;
     private String wikiDataId;
 
 
     @OneToMany(mappedBy = "country")
-    Set<City> cities = new HashSet<>();
+    Set<State> states = new HashSet<>();
 }
 
 

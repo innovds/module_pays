@@ -1,4 +1,4 @@
-package org.innovds.contact.domain;
+package org.innovds.pays.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
@@ -9,6 +9,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -16,7 +17,7 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 @Entity
 @Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"name", "country_id"})}, name= "States")
-public class City extends AbstractPersistable<Long> {
+public class State extends AbstractPersistable<Long> {
 
     @NotBlank
     private String name;
@@ -24,15 +25,15 @@ public class City extends AbstractPersistable<Long> {
     private String iso2;
     private Long latitude;
     private Long longitude;
-    private DateTime created_at;
-    private DateTime updated_at;
+    private Date created_at;
+    private Date updated_at;
     private Short flag;
     private String wikiDataId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "country_id")
     @JsonIgnore()
-    private Country country;
+    private org.innovds.pays.domain.Country country;
 }
 
 

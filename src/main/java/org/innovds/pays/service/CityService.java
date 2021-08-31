@@ -1,7 +1,7 @@
-package org.innovds.contact.service;
+package org.innovds.pays.service;
 
-import org.innovds.contact.domain.City;
 import org.innovds.data.service.AbstractGenericService;
+import org.innovds.pays.domain.City;
 import org.springframework.stereotype.Service;
 
 @Service

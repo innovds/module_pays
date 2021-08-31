@@ -1,4 +1,4 @@
-package org.innovds.contact.domain;
+package org.innovds.pays.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
@@ -9,6 +9,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -22,8 +23,8 @@ public class City extends AbstractPersistable<Long> {
     private String name;
     private Long latitude;
     private Long longitude;
-    private DateTime created_at;
-    private DateTime updated_at;
+    private Date created_at;
+    private Date updated_at;
     private Short flag;
     private String wikiDataId;
 

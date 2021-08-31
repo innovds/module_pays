@@ -1,17 +1,12 @@
-package org.innovds.contact.service;
+package org.innovds.pays.service;
 
-import org.innovds.contact.domain.City;
-import org.innovds.contact.domain.Country;
 import org.innovds.data.service.AbstractGenericService;
-import org.innovds.data.service.IGenericService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
+import org.innovds.pays.domain.Country;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-
 @Service
-public class CountryService extends AbstractGenericService<Country, Long> implements CommandLineRunner {
+public class CountryService extends AbstractGenericService<Country, Long> /* implements CommandLineRunner*/ {
+    /*
     @Autowired
     private IGenericService<City, Long> cityService;
 
@@ -37,6 +32,7 @@ public class CountryService extends AbstractGenericService<Country, Long> implem
         this.cityService.save(tanger);
         this.cityService.save(paris);
         this.cityService.save(leMans);
-    }
 
+    }
+    */
 }
