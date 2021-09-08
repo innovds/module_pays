@@ -1,0 +1,45 @@
+logging:
+  level:
+    org.innovds: trace
+
+#TODO: should be removed in production
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: root
+  jpa: 
+    hibernate.ddl-auto: none
+    show-sql: true
+    properties.hibernate:
+      format_sql: true
+      dialect: org.hibernate.dialect.PostgreSQL81Dialect
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 1MB
+  application:
+    name: country-service
+server:
+  error:
+    include-stacktrace: on-trace-param
+  port: 8081
+  
+
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+mail:
+  smtp:
+    debug: true
